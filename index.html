@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI by Search</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/genai": "https://esm.sh/@google/genai@^0.14.0"
+          }
+        }
+    </script>
+    <!-- 
+      IMPORTANT: Replace ca-pub-XXXXXXXXXXXXXXXX with your own Google AdSense Publisher ID.
+      You can find this in your AdSense account.
+    -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+    <script type="module" src="index.tsx"></script>
+</head>
+<body>
+    <main>
+        <!-- List View: Contains search, categories, filters, and results -->
+        <div id="list-view">
+            <header>
+                <h1>AI by Search</h1>
+                <p>Discover the world of AI. Search for models by function, name, or creator.</p>
+            </header>
+
+            <div id="categories-container" class="categories">
+                <button class="category-btn" data-category="Image Generation">🎨 Image Generation</button>
+                <button class="category-btn" data-category="Text Generation">📝 Text Generation</button>
+                <button class="category-btn" data-category="Code Generation">💻 Code Generation</button>
+                <button class="category-btn" data-category="Audio Synthesis">🎵 Audio Synthesis</button>
+            </div>
+
+            <form id="search-form">
+                <div class="search-wrapper">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="search-input" placeholder="e.g., stable diffusion, large language model..." required aria-label="Search for AI models">
+                </div>
+                 <div class="filter-wrapper">
+                    <label for="pricing-filter">Pricing:</label>
+                    <select id="pricing-filter">
+                        <option value="all">All</option>
+                        <option value="Free">Free</option>
+                        <option value="Freemium">Freemium</option>
+                        <option value="Subscription">Subscription</option>
+                    </select>
+                </div>
+                <button type="submit" aria-label="Search">
+                    <span>Search</span>
+                </button>
+            </form>
+
+            <!-- AdSense Banner Ad Unit Placeholder -->
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                     data-ad-slot="YOUR_AD_SLOT_ID_1"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+            </div>
+
+
+            <div id="results-container" aria-live="polite">
+                <p class="placeholder">Search for an AI model or select a category to begin.</p>
+            </div>
+            <div id="loader" class="loader" style="display: none;"></div>
+        </div>
+
+        <!-- Detail View: Initially hidden, shown when a model is selected -->
+        <div id="detail-view" style="display: none;">
+            <!-- Model details will be dynamically inserted here -->
+        </div>
+    </main>
+</body>
+</html>
